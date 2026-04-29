@@ -14,7 +14,16 @@ public class Main {
             if (answer == 1){
                 System.out.println("Add a name and phone number:");
                 name = scan.nextLine();
-                phone = Integer.parseInt(scan.nextLine());
+                if(name.contains(",") || name.isEmpty()) {
+                    System.out.println("Invalid Name");
+                    continue;
+                }
+                try {
+                    phone = Integer.parseInt(scan.nextLine());
+                } catch (NumberFormatException) {
+                    System.out.println("Invalid Number");
+                    continue;
+                }
                 Contact c = new Contact(name, phone);
                 d.add(c);
             }
