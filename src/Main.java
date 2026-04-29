@@ -31,14 +31,14 @@ public class Main {
             if (answer == 4){
                 System.out.println("Enter a name or part of a name:");
                 name = scan.nextLine();
-                d.search(name);
+                System.out.println(d.search(name));
             }
             if (answer == 5){
                 System.out.println("Give a name and phone number to delete:");
                 name = scan.nextLine();
                 phone = Integer.parseInt(scan.nextLine());
                 Contact c = new Contact(name, phone);
-                d.delete(c);
+                System.out.println(d.delete(c));
             }
             if (answer == 6){
                 System.out.println("Say which you want to replace using a name, give a new name, and a phone number");
