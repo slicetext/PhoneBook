@@ -14,6 +14,7 @@ public class Data {
     }
 
     public void viewAll(){
+        contacts.sort(null);
         for (Contact contact : contacts) {
             System.out.println(contact.getName() + " " + contact.getNumber());
         }

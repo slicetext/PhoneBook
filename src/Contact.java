@@ -1,4 +1,4 @@
-public class Contact {
+public class Contact implements Comparable<Contact> {
     private String name;
     private int number;
 
@@ -21,5 +21,10 @@ public class Contact {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    @Override
+    public int compareTo(Contact other) {
+        return getName().compareTo(other.getName());
     }
 }
