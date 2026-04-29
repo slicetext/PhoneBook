@@ -51,4 +51,6 @@ public class Data {
             System.out.println("Failed to read from disk");
         }
     }
+
+    public void edit()
 }
