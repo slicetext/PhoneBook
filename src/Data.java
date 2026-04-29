@@ -12,8 +12,8 @@ public class Data {
     }
 
     public void viewAll(){
-        for (int i = 0; i < contacts.size(); i++){
-            System.out.println(contacts.get(i).getName() + " " + contacts.get(i).getNumber());
+        for (Contact contact : contacts) {
+            System.out.println(contact.getName() + " " + contact.getNumber());
         }
     }
     public String delete(Contact c){
@@ -26,9 +26,9 @@ public class Data {
         return "Nothing to delete";
     }
     public int search(String na){
-        for (int i = 0; i < contacts.size(); i++){
-            if (contacts.get(i).getName().contains(na)){
-                return contacts.get(i).getNumber();
+        for (Contact contact : contacts) {
+            if (contact.getName().contains(na)) {
+                return contact.getNumber();
             }
         }
         return -1;
