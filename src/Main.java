@@ -10,12 +10,11 @@ public class Main {
         d.load();
         while(true){
             System.out.println("Press 1 to add, 2 to View, 3 to Exit, 4 to Search, and 5 to Delete");
-            int answer = scan.nextInt();
+            int answer = Integer.parseInt(scan.nextLine());
             if (answer == 1){
                 System.out.println("Add a name and phone number:");
                 name = scan.nextLine();
-                scan.nextLine();
-                phone = scan.nextInt();
+                phone = Integer.parseInt(scan.nextLine());
                 Contact c = new Contact(name, phone);
                 d.add(c);
             }
@@ -37,7 +36,7 @@ public class Main {
             if (answer == 5){
                 System.out.println("Give a name and phone number to delete:");
                 name = scan.nextLine();
-                phone = scan.nextInt();
+                phone = Integer.parseInt(scan.nextLine());
                 Contact c = new Contact(name, phone);
                 d.delete(c);
             }
