@@ -21,7 +21,7 @@ public class Data {
     }
     public String delete(Contact c){
         for (int i = 0; i < contacts.size(); i++){
-            if (c.equals(contacts.get(i))){
+            if (c.getName().equals(contacts.get(i).getName()) && c.getNumber() == contacts.get(i).getNumber()){
                 contacts.remove(i);
                 return "Deleted";
             }
@@ -71,8 +71,17 @@ public class Data {
         }
     }
 
+
     public void edit(String search, String n, int p) {
-        int placement = search(search);
+        int placement = -1;
+        for (int i = 0; i < contacts.size(); i++) {
+            if (contacts.get(i).getName().equals(n)) {
+                placement = i;
+            }
+        }
+        if (placement == -1){
+            return;
+        }
         contacts.get(placement).setName(n);
         contacts.get(placement).setNumber(p);
     }
