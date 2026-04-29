@@ -7,6 +7,7 @@ public class Main {
         String name;
         int phone;
         Data d = new Data();
+        d.load();
         while(true){
             System.out.println("Press 1 to add, 2 to View, 3 to Exit, 4 to Search, and 5 to Delete");
             int answer = scan.nextInt();
@@ -20,6 +21,10 @@ public class Main {
 
             if (answer == 2){
                 d.viewAll();
+            }
+
+            if (answer == 3) {
+                d.serialize();
             }
 
             if (answer == 4){
