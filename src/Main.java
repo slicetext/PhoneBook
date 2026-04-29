@@ -9,7 +9,7 @@ public class Main {
         Data d = new Data();
         d.load();
         while(true){
-            System.out.println("Press 1 to add, 2 to View, 3 to Exit, 4 to Search, and 5 to Delete");
+            System.out.println("Press 1 to add, 2 to View, 3 to Exit, 4 to Search, 5 to Delete, and 6 to Edit");
             int answer = Integer.parseInt(scan.nextLine());
             if (answer == 1){
                 System.out.println("Add a name and phone number:");
@@ -39,6 +39,13 @@ public class Main {
                 phone = Integer.parseInt(scan.nextLine());
                 Contact c = new Contact(name, phone);
                 d.delete(c);
+            }
+            if (answer == 6){
+                System.out.println("Say which you want to replace using a name, give a new name, and a phone number");
+                String replace = scan.nextLine();
+                name = scan.nextLine();
+                phone = Integer.parseInt(scan.nextLine());
+                d.edit(replace, name, phone);
             }
         }
     }

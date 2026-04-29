@@ -53,5 +53,9 @@ public class Data {
         }
     }
 
-    public void edit() {}
+    public void edit(String search, String n, int p) {
+        int placement = search(search);
+        contacts.get(placement).setName(n);
+        contacts.get(placement).setNumber(p);
+    }
 }
